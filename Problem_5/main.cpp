@@ -1,6 +1,4 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
 
 bool allDivisible(int n, int limit)
 {
