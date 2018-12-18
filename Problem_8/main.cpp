@@ -25,9 +25,9 @@ int main(int argc, char const *argv[])
         "71636269561882670428252483600823257530420752963450";
 
 
-    size_t amount = 13;
+    size_t amount = 4;
     size_t maxi = 0;
-    for (size_t i = 0; i < number.size() - amount; ++i)
+    for (size_t i = 0; i <= number.size() - amount; ++i)
     {
         size_t prod = 1;
         for (size_t j = 0; j < amount; ++j)
