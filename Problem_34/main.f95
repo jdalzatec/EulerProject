@@ -42,7 +42,7 @@ end function isCurious
 recursive function factorial(n) result(total)
     implicit none
     integer :: n, total
-    if ((n .EQ. 0) .OR. (n .EQ. 1)) then
+    if (n .EQ. 0) then
         total = 1
     else
         total = n * factorial(n - 1)
