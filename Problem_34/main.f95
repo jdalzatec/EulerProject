@@ -2,10 +2,12 @@ program problem_34
     implicit none
     logical :: isCurious
     integer(kind = 8) :: i, total
+    integer :: pow
 
+    pow = 5
     total = 0
-    do i = 10, 1000000 ! This limit was just a guess, there must be a reason but I don't know it.
-        if (isCurious(i)) then
+    do i = 10, 10 ** pow ! This limit was just a guess, there must be a reason but I don't know it.
+        if (isCurious(i, pow)) then
             total = total + i
         endif
     enddo
@@ -13,25 +15,25 @@ program problem_34
 
 end program problem_34
 
-logical function isCurious(number)
+logical function isCurious(number, pow)
     implicit none
     integer(kind = 8) :: number
-    integer :: factorial, pow, suma, remainder, digit
+    integer :: factorial, local_pow, pow, suma, remainder, digit
 
+    local_pow = pow
     remainder = number
-    pow = 6
     suma = 0
-    do while (pow .GT. -1)
-        if (modulo(remainder, 10 ** pow) .NE. number) then
-            digit = remainder / (10 ** pow)
-            remainder = modulo(remainder, 10 ** pow)
+    do while (local_pow .GT. -1)
+        if (modulo(remainder, 10 ** local_pow) .NE. number) then
+            digit = remainder / (10 ** local_pow)
+            remainder = modulo(remainder, 10 ** local_pow)
             suma = suma + factorial(digit)
             if (suma .GT. number) then
                 isCurious = .FALSE.
                 return
             endif
         endif
-        pow = pow - 1
+        local_pow = local_pow - 1
     enddo
 
     isCurious = (suma .EQ. number)
