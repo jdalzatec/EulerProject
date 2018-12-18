@@ -1,23 +1,26 @@
-#This code works but is inefficient as hell
+#This code works but it is very unefficient!!!
 
-chain_length <- c()
-number = 1000000
+number <- 1000000
+longest_start <- 0
+longest_count <- 0
 
 for (i in (2:number)){
   n <- 0
-  while(i > 1){
-    if (i %% 2 == 0){
-      i <- i/2
+  current <- i
+  while(current > 1){
+    if (current %% 2 == 0){
+      current <- current/2
     }
     else{
-      i <- 3*i + 1
+      current <- 3*current + 1
     }
-    i <- i
     n <- n + 1
   }
-  chain_length <- c(chain_length, n)
+  
+  if (n > longest_count) {
+    longest_count <- n
+    longest_start <- i
+  }
 }
 
-print(chain_length)
-number_with_longest_chain = which(chain_length == max(chain_length)) + 1
-print (number_with_longest_chain)
+print (longest_start)
