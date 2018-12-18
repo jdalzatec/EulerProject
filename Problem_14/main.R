@@ -1,7 +1,7 @@
 #This code works but is inefficient as hell
 
 chain_length <- c()
-number = 5000
+number = 1000000
 
 for (i in (2:number)){
   n <- 0
