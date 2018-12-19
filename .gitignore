@@ -4,6 +4,6 @@ main
 *.x
 *.out
 *.png
-
+*.Rhistory
 
 .~lock.list.ods#
