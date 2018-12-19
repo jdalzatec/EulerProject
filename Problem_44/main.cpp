@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
     
     /*
     I did not like this problem. The limit variable was just a wild guess.
-    I runed it with limit=100000 and it printed out the same single result,
+    I ran it with limit=100000 and it printed out the same single result,
     which just happens to be the correct one.
     */
 
