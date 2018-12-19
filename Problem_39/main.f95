@@ -9,7 +9,7 @@ program problem_39
         do a = 1, p - 2 
             do b = a + 1, p - 2
                 c = p - a - b
-                if (a*a + b*b .EQ. c*c) then
+                if (a*a + b*b == c*c) then
                     counter = counter + 1
                 endif
             enddo
