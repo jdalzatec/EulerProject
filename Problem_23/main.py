@@ -1,6 +1,5 @@
 from tqdm import tqdm
 import numpy 
-
 from numba import njit
 
 @njit
